@@ -1,21 +1,27 @@
 package correct.twitter;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeSet;
 
 public class Dictionary {
 	
 	/**
 	 * The current contents of the dictionary
 	 */
-	private HashMap<String, Integer> dictionaryWords;
+	private HashMap<String, Integer> dictionaryWords = new HashMap<String, Integer>();
 	
 	/**
 	 * Instantiate a new Dictionary.
 	 */
 	public Dictionary()
 	{
-		
 	}
 	
 	/**
@@ -26,7 +32,25 @@ public class Dictionary {
 	 */
 	public Dictionary(String initialDictionaryPath)
 	{
-		
+		loadDictionary(initialDictionaryPath);
+	}
+	
+	/**
+	 * 
+	 */
+	public void learnFromListOfWords(List<String> words)
+	{
+		for (String word : words)
+		{
+			if (!this.dictionaryWords.containsKey(word))
+			{
+				this.dictionaryWords.put(word, 1);
+			}
+			else
+			{
+				this.dictionaryWords.put(word, this.dictionaryWords.get(word) + 1);
+			}
+		}
 	}
 	
 	/**
@@ -59,7 +83,7 @@ public class Dictionary {
 	 */
 	public boolean wordIsInDictionary(String wordToCheck)
 	{
-		return false;
+		return this.dictionaryWords.get(wordToCheck) != null;
 	}
 	
 	/**
@@ -94,7 +118,30 @@ public class Dictionary {
 	 */
 	public String findNearest(String inputWord)
 	{
-		return "";
+		ArrayList<String> candidates = new ArrayList<String>();
+		for (String key : this.dictionaryWords.keySet())
+		{
+			int distance = this.calculateLevenshteinDistance(inputWord, key);
+			if (distance <= 2)
+			{
+				candidates.add(key);
+			}
+		}
+		
+		int maxValue = 0;
+		String maxWord = "";
+		
+		for (String candidate : candidates)
+		{
+			int prior = this.dictionaryWords.get(candidate);
+			if (prior > maxValue)
+			{
+				maxValue = prior;
+				maxWord = candidate;
+			}
+		}
+		
+		return maxWord;
 	}
 	
 	/**
@@ -155,6 +202,42 @@ public class Dictionary {
 	{
 		Arrays.sort(array);
 		return array[0];
+	}
+	
+	int getCountOfWord(String word)
+	{
+		return (this.dictionaryWords.get(word) == null) ? 0 : this.dictionaryWords.get(word);
+	}
+	
+	public void dumpDictionaryData()
+	{
+		HashMap<String, Integer> sortedDictionary = this.sortStringIntegerHashMap(this.dictionaryWords, Collections.reverseOrder());
+		for (String key : sortedDictionary.keySet())
+		{
+			System.out.printf("Word: %s, Count: %d\n", key, sortedDictionary.get(key));
+		}
+	}
+	
+	private HashMap<String, Integer> sortStringIntegerHashMap(HashMap<String, Integer> inputMap, Comparator comparator)
+	{
+	    Map<String, Integer> tempMap = new HashMap<String, Integer>();
+	    for (String wsState : inputMap.keySet()){
+	        tempMap.put(wsState, inputMap.get(wsState));
+	    }
+
+	    List<String> mapKeys = new ArrayList<String>(tempMap.keySet());
+	    List<Integer> mapValues = new ArrayList<Integer>(tempMap.values());
+	    HashMap<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
+	    TreeSet<Integer> sortedSet = new TreeSet<Integer>(comparator);
+	    sortedSet.addAll(mapValues);
+	    Object[] sortedArray = sortedSet.toArray();
+	    int size = sortedArray.length;
+	    for (int i=0; i<size; i++){
+	        sortedMap.put(mapKeys.get(mapValues.indexOf(sortedArray[i])), 
+	                      (Integer)sortedArray[i]);
+	    }
+	    
+	     return sortedMap;
 	}
 
 }
