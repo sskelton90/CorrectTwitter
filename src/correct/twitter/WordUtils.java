@@ -3,6 +3,7 @@ package correct.twitter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WordUtils {
 	
@@ -31,6 +32,25 @@ public class WordUtils {
 		}
 		
 		return words;
+	}
+	
+	public static HashMap<String, String> getErrorsAndCorrectionsFromFile(String filepath)
+	{
+		HashMap<String, String> errorsCorrections = new HashMap<String, String>();
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(filepath));
+			String line;
+			while ((line = reader.readLine()) != null)
+			{
+				String[] wordsFromLine = line.split(" +");
+				errorsCorrections.put(wordsFromLine[0].toLowerCase(), wordsFromLine[1].toLowerCase());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return errorsCorrections;
 	}
 	
 }

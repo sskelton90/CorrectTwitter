@@ -1,6 +1,7 @@
 package correct.twitter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class CorrectTwitter {
 	
@@ -13,16 +14,34 @@ public class CorrectTwitter {
 		
 		dict.dumpDictionaryData();
 		
-		ArrayList<String> errorWords = WordUtils.getWordsFromFile("textfiles/test-errors");
+		HashMap<String, String> errorsCorrections = WordUtils.getErrorsAndCorrectionsFromFile("textfiles/SHEFFIELDDAT.643");
 		
-		for (String word : errorWords)
+		float correctCount = 0;
+		float incorrectCount = 0;
+		
+		for (String correctWord : errorsCorrections.keySet())
 		{
-			if (!dict.wordIsInDictionary(word))
+			String error = errorsCorrections.get(correctWord);
+			if (!dict.wordIsInDictionary(error))
 			{
-				System.out.printf("Word not found: %s\n", word);
-				System.out.println(dict.findNearest(word));
+				System.out.printf("Word not found: %s\n", error);
+				
+				String nearestWord = dict.findNearest(error);
+				
+				if (!nearestWord.equals(correctWord))
+				{
+					incorrectCount++;
+					System.out.printf("System corrected %s to %s but real correction was %s\n", error, nearestWord, correctWord);
+				}
+				else
+				{
+					correctCount++;
+					System.out.println("Correct! Correction was: " + nearestWord);
+				}
 			}
 		}
+		
+		System.out.println("Accuracy rate: " + (correctCount / (correctCount + incorrectCount)));
 		
 	}
 
