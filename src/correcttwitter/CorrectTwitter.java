@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import strategies.MostCommonWord;
+import strategies.NoisyChannelModel;
 import wordtools.Dictionary;
 import wordtools.WordUtils;
 
@@ -13,7 +14,7 @@ public class CorrectTwitter {
 	{
 		ArrayList<String> words = WordUtils.getWordsFromFile("textfiles/big.txt");
 		
-		Dictionary dict = new Dictionary(new MostCommonWord());
+		Dictionary dict = new Dictionary(new NoisyChannelModel());
 		dict.learnFromListOfWords(words);
 		
 		dict.dumpDictionaryData();

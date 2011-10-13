@@ -14,7 +14,7 @@ public class MostCommonWord implements CorrectionStrategy {
 		for (String key : dictionaryWords.keySet())
 		{
 			int distance = WordUtils.calculateLevenshteinDistance(inputWord, key);
-			if (distance <= 2)
+			if (distance <= 1)
 			{
 				candidates.add(key);
 			}
