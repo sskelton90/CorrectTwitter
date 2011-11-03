@@ -1,24 +1,25 @@
 package wordtools;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import strategies.CorrectionStrategy;
 
 public class Dictionary {
-	
+
 	/**
 	 * The current contents of the dictionary
 	 */
 	private HashMap<String, Integer> dictionaryWords = new HashMap<String, Integer>();
 	private CorrectionStrategy correctionStrategy;
-	
+
 	/**
 	 * Instantiate a new Dictionary.
 	 */
@@ -26,7 +27,12 @@ public class Dictionary {
 	{
 		this.correctionStrategy = strategy;
 	}
-	
+
+	public Dictionary()
+	{
+
+	}
+
 	/**
 	 * Instantiate a new Dictionary and automatically load the
 	 * saved dictionary at the given file path.
@@ -38,7 +44,7 @@ public class Dictionary {
 		loadDictionary(initialDictionaryPath);
 		this.correctionStrategy = strategy;
 	}
-	
+
 	/**
 	 * 
 	 */
@@ -55,8 +61,11 @@ public class Dictionary {
 				this.dictionaryWords.put(word, this.dictionaryWords.get(word) + 1);
 			}
 		}
+
+		System.out.println("Learned " + dictionaryWords.size());
 	}
-	
+
+
 	/**
 	 * Add the word to the dictionary if it's not already present.
 	 * 
@@ -64,9 +73,9 @@ public class Dictionary {
 	 */
 	public void addWord(String wordToAdd)
 	{
-		
+
 	}
-	
+
 	/**
 	 * Delete a given word from the dictionary if present.
 	 * 
@@ -74,9 +83,9 @@ public class Dictionary {
 	 */
 	public void deleteWord(String wordToDelete)
 	{
-		
+
 	}
-	
+
 	/**
 	 * A simple lookup to check if the given word is in the 
 	 * dictionary.
@@ -89,7 +98,7 @@ public class Dictionary {
 	{
 		return this.dictionaryWords.get(wordToCheck) != null;
 	}
-	
+
 	/**
 	 * Load a dictionary file from a given path.
 	 * 
@@ -97,9 +106,32 @@ public class Dictionary {
 	 */
 	public void loadDictionary(String pathToDictionary)
 	{
-		
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(pathToDictionary));
+			String line;
+			while ((line = reader.readLine()) != null)
+			{
+				if (line.isEmpty())
+				{
+					continue;
+				}
+				
+				String[] wordAndValue = line.split("\t");
+				if (wordAndValue.length == 2)
+				{
+					dictionaryWords.put(wordAndValue[0], Integer.parseInt(wordAndValue[1]));
+				}
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+
+		System.out.println("Dictionary size is " + dictionaryWords.size());
 	}
-	
+
 	/**
 	 * Save the current contents of the dictionary to a file with 
 	 * given path.
@@ -108,9 +140,29 @@ public class Dictionary {
 	 */
 	public void saveDictionary(String pathToSave)
 	{
-		
+		try 
+		{
+			FileWriter fstream = new FileWriter("textfiles/dictionary.data");
+			BufferedWriter out = new BufferedWriter(fstream);
+
+			for (String key : dictionaryWords.keySet())
+			{
+				Integer value = dictionaryWords.get(key);
+				System.out.printf("Word: %s, Count: %d\n", key, value);
+				out.write(key + "\t" + value + "\n");
+			}
+			
+			out.close();
+
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
+
+
 	}
-	
+
 	/**
 	 * Corrects the word based on the current {@link CorrectionStrategy}.
 	 * 
@@ -124,41 +176,14 @@ public class Dictionary {
 		return this.correctionStrategy.findCorrection(inputWord, this.dictionaryWords);
 	}
 
-	
+	public void setCorrectionStrategy(CorrectionStrategy strategy)
+	{
+		this.correctionStrategy = strategy;
+	}
+
 	int getCountOfWord(String word)
 	{
 		return (this.dictionaryWords.get(word) == null) ? 0 : this.dictionaryWords.get(word);
 	}
 	
-	public void dumpDictionaryData()
-	{
-		HashMap<String, Integer> sortedDictionary = this.sortStringIntegerHashMap(this.dictionaryWords, Collections.reverseOrder());
-		for (String key : sortedDictionary.keySet())
-		{
-			System.out.printf("Word: %s, Count: %d\n", key, sortedDictionary.get(key));
-		}
-	}
-	
-	private HashMap<String, Integer> sortStringIntegerHashMap(HashMap<String, Integer> inputMap, Comparator comparator)
-	{
-	    Map<String, Integer> tempMap = new HashMap<String, Integer>();
-	    for (String wsState : inputMap.keySet()){
-	        tempMap.put(wsState, inputMap.get(wsState));
-	    }
-
-	    List<String> mapKeys = new ArrayList<String>(tempMap.keySet());
-	    List<Integer> mapValues = new ArrayList<Integer>(tempMap.values());
-	    HashMap<String, Integer> sortedMap = new LinkedHashMap<String, Integer>();
-	    TreeSet<Integer> sortedSet = new TreeSet<Integer>(comparator);
-	    sortedSet.addAll(mapValues);
-	    Object[] sortedArray = sortedSet.toArray();
-	    int size = sortedArray.length;
-	    for (int i=0; i<size; i++){
-	        sortedMap.put(mapKeys.get(mapValues.indexOf(sortedArray[i])), 
-	                      (Integer)sortedArray[i]);
-	    }
-	    
-	     return sortedMap;
-	}
-
 }

@@ -4,11 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-import org.easymock.EasyMock;
 import org.junit.Test;
-
-import strategies.CorrectionStrategy;
-import wordtools.Dictionary;
 
 
 public class DictionaryTest {
@@ -21,11 +17,12 @@ public class DictionaryTest {
 		wordsToLearn.add("hello");
 		wordsToLearn.add("steven");
 		
-		Dictionary dict = new Dictionary(EasyMock.createNiceMock(CorrectionStrategy.class));
+		Dictionary dict = new Dictionary();
 		dict.learnFromListOfWords(wordsToLearn);
 		
 		assertEquals(true, dict.wordIsInDictionary("hello"));
 		assertEquals(2, dict.getCountOfWord("hello"));
 		assertEquals(1, dict.getCountOfWord("steven"));
 	}
+
 }

@@ -17,10 +17,14 @@ public class WordUtils {
 			String line;
 			while ((line = reader.readLine()) != null)
 			{
+				if (line.startsWith("<"))
+				{
+					continue;
+				}
 				String[] wordsFromLine = line.split(" ");
 				for (String word : wordsFromLine)
 				{
-					String normalisedString = word.replaceAll("[^a-zA-Z\'-]", "").toLowerCase();
+					String normalisedString = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
 					if (normalisedString.isEmpty())
 					{
 						continue;
@@ -28,7 +32,11 @@ public class WordUtils {
 					words.add(normalisedString);
 				}
 			}
-		} catch (Exception e) {
+			
+			reader.close();
+		} 
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		
@@ -99,6 +107,39 @@ public class WordUtils {
 		}
 		
 		return distanceMatrix[firstLength][secondLength];
+	}
+	
+	public static ArrayList<String> wordsFromXml(String xmlPath)
+	{
+		ArrayList<String> words = new ArrayList<String>();
+		BufferedReader reader;
+		try {
+			reader = new BufferedReader(new FileReader(xmlPath));
+			String line;
+			while ((line = reader.readLine()) != null)
+			{
+				if (line.startsWith("<"))
+				{
+					continue;
+				}
+				String[] wordsFromLine = line.split(" ");
+				for (String word : wordsFromLine)
+				{
+					String normalisedString = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
+					if (normalisedString.isEmpty())
+					{
+						continue;
+					}
+					words.add(normalisedString);
+				}
+			}
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return words;
 	}
 	
 	/**

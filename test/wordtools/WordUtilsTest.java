@@ -40,6 +40,7 @@ public class WordUtilsTest {
 		assertEquals(3, WordUtils.calculateLevenshteinDistance("saturday", "sunday"));
 		assertEquals(6, WordUtils.calculateLevenshteinDistance("YHCQPGK", "LAHYQQKPGKA"));
 		assertEquals(1, WordUtils.calculateLevenshteinDistance("acress", "actress"));
+		assertEquals(2, WordUtils.calculateLevenshteinDistance("important", "importnat"));
 	}
 
 }
