@@ -14,6 +14,9 @@ def load_words(filepath):
 def strip_html(text):
   return re.sub('<[^<]+?>', '', text)
 
+def strip_punctuation(word):
+  return word.translate(string.maketrans("",""), string.punctuation)
+
 def tokenise(text):
   text = strip_html(text)
   tokens = [word.lower() for word in wordpunct_tokenize(text)]
@@ -58,3 +61,24 @@ def load_corrections_from_file(filename):
     corrections[error_mapping[0].lower()] = error_mapping[1].lower()
 
   return corrections
+
+def number_of_tweets(filename):
+  with open(filename) as f:
+    for i, l in enumerate(f):
+      pass
+  return i + 1
+
+def is_url(word):
+  return re.search("(^http(s{0,1})://)?[a-zA-Z0-9_/\\-\\.]+\\.([A-Za-z/]{2,5})[a-zA-Z0-9_/\\&\\?\\=\\-\\.\\~\\%]*", word) != None
+
+def is_timestamp(word):
+  return re.search("[0-9]{14}", word) != None
+
+def is_at_username(word):
+  return re.search("@[a-zA-Z0-9_]+", word) != None or re.search("user[0-9]+", word) != None
+
+def is_hashtag(word):
+  return re.search("#[a-zA-Z0-9_]+", word) != None
+
+def has_tweet_specific_features(token):
+  return is_url(token) or is_at_username(token) or is_hashtag(token) or is_timestamp(token)

@@ -54,3 +54,45 @@ elif sys.argv[1] == "accuracy":
   
   print "Total accuracy:", (correct_count/(correct_count + incorrect_count))
   finish()
+
+elif sys.argv[1] == "tweets":
+  d.load_dictionary(sys.argv[2])
+
+  if sys.argv[3] not in strategies:
+    print "Correction strategy not recognised. Available strategies are: ", strategies
+    finish()
+    
+  strategy = strategies[sys.argv[3]]
+
+  print "Correcting", number_of_tweets(sys.argv[4]), "tweets"
+
+  tweets = open(sys.argv[4])
+  output = file("output.txt", 'w')
+
+  for tweet in tweets:
+    corrected_tweet = ""
+    tweet_length = len(tweet.split())
+    corrections_count = 1.0
+    corrections = []
+
+    for word in tweet.split():
+      if corrections_count > (tweet_length/3):
+        corrected_tweet = "Non-English language detected!"
+        break
+      if has_tweet_specific_features(word) or strip_punctuation(word.lower()) in d.dictionary_words:
+        corrected_tweet += word + " "
+      else:
+        word_stripped = strip_punctuation(word)
+        corrected_tweet += strategy(word_stripped.lower(), d.dictionary_words) + " "
+        corrections_count += 1.0
+        corrections.append(word.lower())
+
+    output.write(tweet + "\n" + corrected_tweet + "\n")
+    for correction in corrections:
+      output.write(correction + "\n")
+  
+  print "Completed succesfully!"
+
+
+
+
