@@ -37,3 +37,15 @@ def edits2(word, d):
 
 def known(words, d):
   return set(w for w in words if w in d)
+
+def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
+  candidates = known([word], dictionary) or known(edits1(word), dictionary) or edits2(word, dictionary) or [word]
+
+  # If there's only one correction return it
+  if len(candidates) == 1:
+    return candidates.pop()
+  # Otherwise rank based on frequency of correction and n-gram probability
+
+  return ""
+
+  

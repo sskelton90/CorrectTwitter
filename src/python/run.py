@@ -2,12 +2,38 @@ import sys
 from word_tools import *
 from dictionary import *
 from correction_strategies import *
+from collections import defaultdict
 
 def finish():
   sys.exit("Finishing")
 
+def nested_dict():
+  return defaultdict(float)
+
+def load_ngrams(filepath):
+  textfile = open(filepath)
+  ngrams = defaultdict(nested_dict)
+  last_word = ""
+  current_set = {}
+  for line in textfile:
+    split_line = line.split()
+
+    if last_word != split_line[0]:
+      ngrams[last_word] = current_set
+      last_word = split_line[0]
+      current_set = {}
+      current_set[split_line[1]] = float(split_line[2])
+    else:
+      current_set[split_line[1]] = float(split_line[2])
+
+  ngrams[last_word] = current_set
+
+  return ngrams
+
+
 d = Dictionary()
-strategies = {"mostcommon": most_common, "noisynorvig": noisy_channel_norvig}
+strategies = {"mostcommon": most_common, "noisynorvig": noisy_channel_norvig, "noisyngrams": noisy_channel_with_ngrams}
+n_grams = {}
 
 if len(sys.argv) == 1:
   print "Please supply a function. The choices are train, accuracy or tweets"
@@ -61,7 +87,10 @@ elif sys.argv[1] == "tweets":
   if sys.argv[3] not in strategies:
     print "Correction strategy not recognised. Available strategies are: ", strategies
     finish()
-    
+  
+  if sys.argv[3] == "noisyngrams":
+    n_grams = load_ngrams(sys.argv[5])
+
   strategy = strategies[sys.argv[3]]
 
   print "Correcting", number_of_tweets(sys.argv[4]), "tweets"
@@ -74,8 +103,19 @@ elif sys.argv[1] == "tweets":
     tweet_length = len(tweet.split())
     corrections_count = 1.0
     corrections = []
+    words = tweet.split()
 
-    for word in tweet.split():
+    for i in range(len(words)):
+      word = words[i]
+      
+      context = []
+      if i == 0:
+        context = [words[1]]
+      elif i == len(words) - 1:
+        context = [words[i - 1]]
+      else:
+        context = [words[i-1], words[i + 1]]
+
       if corrections_count > (tweet_length/3):
         corrected_tweet = "Non-English language detected!"
         break
@@ -83,7 +123,10 @@ elif sys.argv[1] == "tweets":
         corrected_tweet += word + " "
       else:
         word_stripped = strip_punctuation(word)
-        corrected_tweet += strategy(word_stripped.lower(), d.dictionary_words) + " "
+        if (sys.argv[3] == "noisyngrams"):
+          corrected_tweet += strategy(word_stripped.lower(), context, d.dictionary_words, n_grams) + " "
+        else:
+          corrected_tweet += strategy(word_stripped.lower(), d.dictionary_words) + " "
         corrections_count += 1.0
         corrections.append(word.lower())
 
