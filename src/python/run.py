@@ -107,14 +107,14 @@ elif sys.argv[1] == "tweets":
 
     for i in range(len(words)):
       word = words[i]
-      
       context = []
+      
       if i == 0:
-        context = [words[1]]
+        context = ["",strip_punctuation(words[1]).lower()]
       elif i == len(words) - 1:
-        context = [words[i - 1]]
+        context = [strip_punctuation(words[i - 1]).lower(), ""]
       else:
-        context = [words[i-1], words[i + 1]]
+        context = [strip_punctuation(words[i - 1]).lower(), strip_punctuation(words[i + 1]).lower()]
 
       if corrections_count > (tweet_length/3):
         corrected_tweet = "Non-English language detected!"

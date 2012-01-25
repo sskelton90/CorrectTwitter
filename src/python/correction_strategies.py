@@ -1,5 +1,6 @@
 from word_tools import *
 import string
+import math
 
 def most_common(input_word, dictionary):
   candidates = []
@@ -45,7 +46,28 @@ def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
   if len(candidates) == 1:
     return candidates.pop()
   # Otherwise rank based on frequency of correction and n-gram probability
+  max_prob = 0.0
+  max_word = ""
+  for c in candidates:
+    ngram_prob = 0.0
+    try:
+      if context[0] == "":
+        ngram_prob = ngrams[c][context[1]]
+      elif context[1] == "":
+        ngram_prob = ngrams[context[0]][c]
+      else:
+        ngram_prob = max(ngrams[context[0]][c], ngrams[c][context[1]])
 
-  return ""
+      if ngram_prob == 0.0:
+        ngram_prob = 1/float(len(ngrams))
+    except KeyError:
+      ngram_prob = 1/float(len(ngrams))
+    
+    prob = dictionary[c] * ngram_prob
+    if prob > max_prob:
+      max_prob = prob
+      max_word = c
+
+  return max_word
 
   

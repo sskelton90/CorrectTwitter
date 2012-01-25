@@ -82,3 +82,20 @@ def is_hashtag(word):
 
 def has_tweet_specific_features(token):
   return is_url(token) or is_at_username(token) or is_hashtag(token) or is_timestamp(token)
+
+def generate_bigrams(word):
+  bigrams = []
+  for i in range(len(word) - 1):
+    bigrams.append(word[i:i+2])
+
+  return bigrams
+
+def ngram_similarity(word1, word2):
+  bigrams1 = generate_bigrams(word1)
+  bigrams2 = generate_bigrams(word2)
+
+  intersection = [b for b in bigrams1 if b in bigrams2]
+  union = list(set(bigrams1) | set(bigrams2))
+
+  return float(len(intersection)) / (len(union))
+
