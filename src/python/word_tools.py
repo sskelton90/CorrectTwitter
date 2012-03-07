@@ -99,3 +99,22 @@ def ngram_similarity(word1, word2):
 
   return float(len(intersection)) / (len(union))
 
+def ngram_similarity_order(word1, word2):
+  count = 0
+
+  if len(word2) > len(word1):
+    temp = word2
+    word2 = word1
+    word1 = temp
+
+  if word1[0] == word2[0]:
+    count += 1
+  if word1[-1] == word2[-1]:
+    count += 1
+
+  bigrams1 = generate_bigrams(word1)
+  bigrams2 = generate_bigrams(word2)
+
+  print bigrams1, bigrams2
+
+  return float(count) / len(list(set(bigrams1) | set(bigrams2)))
