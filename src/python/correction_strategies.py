@@ -70,4 +70,22 @@ def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
 
   return max_word
 
-  
+def char_level_ngrams(word, dictionary):
+  max_value = 0.0
+  max_word = ""
+
+  for real_word in dictionary:
+    score = ngram_similarity_order(word, real_word, 2)
+    if score > max_value:
+      max_word = real_word
+      max_value = score
+
+  return max_word
+
+def voting(word, dictionary, context, ngrams):
+  candidates = []
+  candidates.append(noisy_channel_norvig(word, dictionary))
+  candidates.append(char_level_ngrams(word, dictionary))
+  candidates.append(noisy_channel_with_ngrams(word, context, dictionary, ngrams))
+
+  return max(set(candidates), key=candidates.count)

@@ -186,4 +186,9 @@ public class Dictionary {
 		return (this.dictionaryWords.get(word) == null) ? 0 : this.dictionaryWords.get(word);
 	}
 	
+	public int getDictionarySize()
+	{
+		return this.dictionaryWords.size();
+	}
+	
 }

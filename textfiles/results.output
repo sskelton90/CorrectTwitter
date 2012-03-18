@@ -1,0 +1,236 @@
+Input: 20091110083234	user1395	my mind is gone and fucked up	<a href="http://www.myspace.com/sync" rel="nofollow">MySpace</a>
+Output: 20091110083234 user1395 my mind is gone and tucked up a href http www.myspace.com sync real follow Space a 
+Input: 20091110083234	user1397	@user1398 hahaha why would I lie to u?	web
+Output: 20091110083234 user1397 user1398 hahaha why would I lie to u web 
+Input: 20091110083235	user1399	Featured Job: Network Sales Consultant - Ethernet, Networks, SALES - Portsmouth http://bit.ly/1JOArR #Jobs	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083235 user1399 Featured Job Network Sales Consultant Ethernet Networks SALES Portsmouth http bit.ly 1JOArR Jobs a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083235	user1400	Bilfinger Berger mulls IPO; profit falls: FRANKFURT (MarketWatch) &#8212; Germany&#8217;s Bilfinger Berge.. http://bit.ly/1FXgUV	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083235 user1400 Bilfinger Berger mulls IPO profit falls FRANKFURT MarketWatch 212 Germany 8217 s Bilfinger Berge http bit.ly 1FXgUV a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083235	user1401	@user314 naa, but echofon is cool.	<a href="http://echofon.com/" rel="nofollow">Echofon</a>
+Output: 20091110083235 user1401 user314 nah but echelon is cool a href http echofon.com real follow Ecofin a 
+Input: 20091110083235	user1402	@user15 ZueRainey and it wasn exactly mispronounciation..its the "accent" i think. bcoz the second time he called..it was still "dubur banking"!	web
+Output: 20091110083235 user1402 users ZueRainey and it wasn exactly mispronounciation its the accent i think co the second time he called it was still debut banking web 
+Input: 20091110083235	user1404	@user1405 :O have a greeeeat one Esh :)	web
+Output: 20091110083235 user1404 user1405 O have a greenest one ash web 
+Input: 20091110083235	user1406	@user1407 lol good one	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083235 user1406 user1407 lot good one a href http m.twitter.com real follow mobile web a 
+Input: 20091110083236	user1408	@user1409 lol I hope u aint been frustrated that long	<a href="http://ubertwitter.com" rel="nofollow">UberTwitter</a>
+Output: 20091110083236 user1408 user1409 lot I hope u paint been frustrated that long a href http ubertwitter.com real follow UberTwitter a 
+Input: 20091110083236	user1411	RT @user1411: Ack! Another fuckin scary movie! http://twitpic.com/oz7cw	<a href="http://www.deliciousmorsel.com/app/twee" rel="nofollow">Twee</a>
+Output: 20091110083236 user1411 RT user1411 Ack Another sucking scary movie http twitpic.com oz7cw a href http www.deliciousmorsel.com app tee real follow wee a 
+Input: 20091110083236	user1414	$10 was a hell no, but at $5 it's a maybe when I have more disposable income. Only maybe.	<a href="http://www.seesmic.com/" rel="nofollow">Seesmic</a>
+Output: 20091110083236 user1414 10 was a hell no but at 5 it a maybe when I have more disposable income Only maybe a href http www.seesmic.com real follow Seismic a 
+Input: 20091110083236	user1415	Bra jobbat med typo. Wire Design. http://bit.ly/J8J5I Via @user1416	<a href="http://www.atebits.com/" rel="nofollow">Tweetie</a>
+Output: 20091110083236 user1415 era combat med typo Wire Design http bit.ly J8J5I Via user1416 a href http www.atebits.com real follow Tweetie a 
+Input: 20091110083237	user1417	When a disease causing agent evolves, is this evidence of Intelligent Design or Evolution? http://bit.ly/3jhcKC	<a href="http://andrewjaswa.com/bird-feeder/" rel="nofollow">Bird Feeder</a>
+Output: 20091110083237 user1417 When a disease causing agent evolves is this evidence of Intelligent Design or Evolution http bit.ly 3jhcKC a href http andrewjaswa.com bird feeder real follow Bird Feeder a 
+Input: 20091110083237	user1418	SA Golf update Kamte could make history: James Kamte has confirmed his place .. http://tinyurl.com/y8gpgpp follow who i follow	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083237 user1418 SA Golf update Kate could make history James Kate has confirmed his place http tinyurl.com y8gpgpp follow who i follow a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083238	user1421	Phil and Tiger in the Spotlight: Sunday two golf biggest stars were in the spotlight, each going home with a tr.. http://bit.ly/dKi1u	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083238 user1421 Phil and Tiger in the Spotlight Sunday two golf biggest stars were in the spotlight each going home with a tr http bit.ly Kivu a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083238	user1427	A girl on Fbook was whining about needing money for her kids, so I told her to get rid of her internet. Was that too callous?	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083238 user1427 A girl on book was whining about needing money for her kids so I told her to get rid of her internet Was that too callous a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083238	user1428	@user1429 and yes you needed to know that!	web
+Output: 20091110083238 user1428 user1429 and yes you needed to know that web 
+Input: 20091110083238	user1430	@user1431 nutn.. u?	web
+Output: 20091110083238 user1430 user1431 nuts u web 
+Input: 20091110083238	user774	http://bit.ly/1TRwcU	web
+Output: 20091110083238 user774 http bit.ly 1TRwcU web 
+Input: 20091110083238	user1435	#One #World #Global #Currency - it's almost here! http://tcp3.com/wigv &lt;this has been planned for sooo long now	web
+Output: 20091110083238 user1435 One World Global Currency it almost here http tcp3.com wig lt this has been planned for sooo long now web 
+Input: 20091110083239	user1436	Just had a terrible dream about @user1437	<a href="http://twitterrific.com" rel="nofollow">Twitterrific</a>
+Output: 20091110083239 user1436 Just had a terrible dream about user1437 a href http twitterrific.com real follow Twitterrific a 
+Input: 20091110083239	user1052	@user1051 lol..y u gotta think about it..i think its your eyes......lol..	web
+Output: 20091110083239 user1052 user1051 lot y u gotta think about it i think its your eyes lot web 
+Input: 20091110083239	user1438	RT @user1439: #worstfeeling Being tongue twisted and having involuntary muscle spasms while trying to comfort someone.. &lt;~~~ lmaooo	<a href="http://echofon.com/" rel="nofollow">Echofon</a>
+Output: 20091110083239 user1438 RT user1439 worstfeeling Being tongue twisted and having involuntary muscle spasms while trying to comfort someone lt lmaooo a href http echofon.com real follow Ecofin a 
+Input: 20091110083239	user1442	Analysing "November Rain" by Guns N' Roses, the music video	web
+Output: 20091110083239 user1442 Analyzing November Rain by Guns N Roses the music video web 
+Input: 20091110083240	user1443	@user1444 What a great weekend for football, Cats beat KU and Cowboys beat the Eagles!	web
+Output: 20091110083240 user1443 user1444 What a great weekend for football Cats beat K and Cowboys beat the Eagles web 
+Input: 20091110083240	user1447	@user1448 yeaaaaaaah!	web
+Output: 20091110083240 user1447 user1448 yeaaaaaaah web 
+Input: 20091110083241	user1451	@user1452 so how would I know	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083241 user1451 user1452 so how would I know a href http m.twitter.com real follow mobile web a 
+Input: 20091110083241	user1454	@user1455 rawr love love love love love love love	<a href="http://ubertwitter.com" rel="nofollow">UberTwitter</a>
+Output: 20091110083241 user1454 user1455 raw love love love love love love love a href http ubertwitter.com real follow UberTwitter a 
+Input: 20091110083241	user1457	Twitter, LinkedIn team up for self-promotion free-for-all http://bit.ly/7NAZQ	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083241 user1457 twitter Linked team up for self promotion free for all http bit.ly 7NAZQ a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083241	user1458	@user1459 pois é né? tem qe me passar pow, kasopakspoasas.. condideração 0 da sua parte, nao passa nem o Nº p/ abiguinha :p maalaa sz '.'	web
+Output: 20091110083241 user1458 user1459 pots n tem qe me passer pow kasopakspoasas consider a o 0 da sua parte nao passa new o N p abiguinha p masala so web 
+Input: 20091110083241	user1460	tomorow = good times! lets go work on some motor veehickles! :-)	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083241 user1460 tomorrow good times lets go work on some motor vehicles a href http m.twitter.com real follow mobile web a 
+Input: 20091110083242	user1463	@user1464 Ha! That's brilliant, thanks for telling me. Have a nice day! X	web
+Output: 20091110083242 user1463 user1464 Ha That brilliant thanks for telling me Have a nice day X web 
+Input: 20091110083242	user1465	I am listening to "Tired Feet" by Alela Diane ♫ http://bit.ly/Rzcl #serenade	web
+Output: 20091110083242 user1465 I am listening to Tired Feet by Acela Diane a http bit.ly Real serenade web 
+Input: 20091110083243	user1468	@user1469 http://bit.ly/2IapWO will not successful in Thailand because of we didn't have 3G signal to use internet. &lt;-- #bfa	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083243 user1468 user1469 http bit.ly 2IapWO will not successful in Thailand because of we didn't have 3G signal to use internet lt bf a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083244	user1470	out of all the videos i recorded of her playing none of them were of her really playing just tuning and adjusting her guitar =/	web
+Output: 20091110083244 user1470 out of all the videos i recorded of her playing none of them were of her really playing just tuning and adjusting her guitar web 
+Input: 20091110083244	user1471	@user1472 yeah i'm going :) @user1473 said he got me a pass yay!	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083244 user1471 user1472 yeah im going user1473 said he got me a pass yay a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083244	user1474	http://bit.ly/35Rz4p	web
+Output: 20091110083244 user1474 http bit.ly 35Rz4p web 
+Input: 20091110083244	user1475	Super #bestfeeling watchn the fam get wha the deserve	<a href="http://ubertwitter.com" rel="nofollow">UberTwitter</a>
+Output: 20091110083244 user1475 Super bestselling watch the far get wha the deserve a href http ubertwitter.com real follow UberTwitter a 
+Input: 20091110083244	user1476	@user1477 Trivium? Born Of Osiris. Tool? I Killed The Prom Queen?	web
+Output: 20091110083244 user1476 user1477 iridium Born Of Osiris Tool I Killed The Prom Queen web 
+Input: 20091110083244	user1479	otw pulaaaang wiwuww	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083244 user1479 tow pulaaaang wiwuww a href http m.twitter.com real follow mobile web a 
+Input: 20091110083245	user1483	@user1484 well im gettin off toodlez til 2ma	web
+Output: 20091110083245 user1483 user1484 well im getting off toddler til ma web 
+Input: 20091110083245	user1487	Featured Job: Program Manager (Technical) http://bit.ly/43FCgw #Jobs	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083245 user1487 Featured Job Program Manager Technical http bit.ly 43FCgw Jobs a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083245	user1488	wondering why I am liking facebook better these days than myspace???	<a href="http://www.myspace.com/sync" rel="nofollow">MySpace</a>
+Output: 20091110083245 user1488 wondering why I am liking factbook better these days than space a href http www.myspace.com sync real follow Space a 
+Input: 20091110083246	user1489	bye peoples vou pra escola não tem #saresp mesmo	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083246 user1489 bye peoples you pro escort n o tem shares memo a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083246	user1490	@user1491 le musée de la DSI gratuitement	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083246 user1490 user1491 le mus e de la DI gratuitement a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083246	user1493	Hittar den gamla godingen "Ship of fools" m World Party på iTunes. Skönt att jag åker tåg i stället. #fb	<a href="http://www.atebits.com/" rel="nofollow">Tweetie</a>
+Output: 20091110083246 user1493 Hattar den gala godingen Ship of fools m World Party p iTunes St nt at jah ker t g i st let b a href http www.atebits.com real follow Tweetie a 
+Input: 20091110083247	user1494	@user1495 *laughs* Oh... *wipestears away* That is good. Anther way to make me the family freak, lolz. :D hahahaha.	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083247 user1494 user1495 laughs Oh wipestears away That is good Another way to make me the family freak told D hahaha a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083247	user1496	@user1497 I hate the smell when my gf does her nails yuk!!	<a href="http://twitterrific.com" rel="nofollow">Twitterrific</a>
+Output: 20091110083247 user1496 user1497 I hate the smell when my of does her nails yuk a href http twitterrific.com real follow Twitterrific a 
+Input: 20091110083247	user1498	tosay we finally got the lettering on our RV which says &quot;Viking Express&quot;. Looks great!	<a href="http://www.myspace.com/sync" rel="nofollow">MySpace</a>
+Output: 20091110083247 user1498 today we finally got the lettering on our RV which says quit Viking Express&quot Looks great a href http www.myspace.com sync real follow Space a 
+Input: 20091110083247	user1500	With comparatively little help and advice from the management http://michaellawrie.com/mond/1257841967.html	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083247 user1500 With comparatively little help and advice from the management http michaellawrie.com mond/1257841967.html a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083247	user1503	@user1504 haha, why?	<a href="http://echofon.com/" rel="nofollow">Echofon</a>
+Output: 20091110083247 user1503 user1504 hah why a href http echofon.com real follow Ecofin a 
+Input: 20091110083248	user1505	Volvo S60 (2010) unveiled: Swedes release first pictures of new S60 saloon aimed at BMW's 3-series http://bit.ly/4cAAZ0	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083248 user1505 Volvo 60 2010 unveiled Swedes release first pictures of new 60 saloon aimed at BMW 3-series http bit.ly 4cAAZ0 a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083248	user1506	Sometimes I wonder if people get its a soap and if they didn't make drama people wouldn't watch it.	web
+Output: 20091110083248 user1506 Sometimes I wonder if people get its a soap and if they didn't make drama people wouldn't watch it web 
+Input: 20091110083248	user1507	RT @user1508: Today will be historic. More girls will break up with their men today because of #ModernWarfare2 - The end of many's social lives.	<a href="http://ubertwitter.com" rel="nofollow">UberTwitter</a>
+Output: 20091110083248 user1507 RT user1508 Today will be historic More girls will break up with their men today because of ModernWarfare2 The end of many social lives a href http ubertwitter.com real follow UberTwitter a 
+Input: 20091110083248	user1509	@user1510 not really lol i just dont sleep much	<a href="http://orangatame.com/products/twitterberry/" rel="nofollow">TwitterBerry</a>
+Output: 20091110083248 user1509 user1510 not really lot i just dont sleep much a href http orangatame.com products twitterberry real follow TwitterBerry a 
+Input: 20091110083248	user1511	The Numbers News - International Details - Mission: Second Place http://tinyurl.com/yzwup64	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083248 user1511 The Numbers News International Details Mission Second Place http tinyurl.com yzwup64 a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083248	user1516	starting to take yearbook photos today, i better not get any complaints! haha	web
+Output: 20091110083248 user1516 starting to take yearbook photos today i better not get any complaints hah web 
+Input: 20091110083248	user1517	Just got Modern Warfare 2 from Sainsburys for £26	web
+Output: 20091110083248 user1517 Just got Modern Warfare 2 from Sainsbury for 26 web 
+Input: 20091110083249	user1520	#bestfeeling final credits rolling on my sisters keeper and knowing i dont have to watch it anymore	web
+Output: 20091110083249 user1520 bestselling final credits rolling on my sisters keeper and knowing i dont have to watch it anymore web 
+Input: 20091110083249	user1521	Define old... "Aaah, 2006"	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083249 user1521 Define old Azah 2006 a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083249	user1522	-I'm considering opening up the original one, just to keep it open until I get back, but still not sure-	web
+Output: 20091110083249 user1522 I'm considering opening up the original one just to keep it open until I get back but still not sure web 
+Input: 20091110083249	user1523	*gulong2 sa ilalim ng kumot* (HAHA) http://plurk.com/p/2krys7	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083249 user1523 gulong2 sa claim ng humor HAH http plurk.com p/2krys7 a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083249	user1524	Korek! Joke joke joke! @user1525	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083249 user1524 Korea Joke joke joke user1525 a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083249	user1526	@user1527 ): this officially sucks. no classes with you next year ): at least i get frees now... i guess thats a plus	web
+Output: 20091110083249 user1526 user1527 this officially sucks no classes with you next year at least i get frees now i guess thats a plus web 
+Input: 20091110083249	user1528	@user1529 I was ptfo. Call me next time and I'll get up :)	web
+Output: 20091110083249 user1528 user1529 I was to Call me next time and I'll get up web 
+Input: 20091110083249	user1530	here&#39;s some advice... when i say don&#39;t fucking touch me that means don&#39;t fucking touch me. dumb ass.	<a href="http://www.myspace.com/sync" rel="nofollow">MySpace</a>
+Output: 20091110083249 user1530 here 39 s some advice when i say don 39 t sucking touch me that means don 39 t sucking touch me dumb ass a href http www.myspace.com sync real follow Space a 
+Input: 20091110083250	user1531	Why am I up? Smh. Imma pay for this ish tomorrow tho bet that.	<a href="http://www.atebits.com/" rel="nofollow">Tweetie</a>
+Output: 20091110083250 user1531 Why am I up Suh Imam pay for this ish tomorrow the bet that a href http www.atebits.com real follow Tweetie a 
+Input: 20091110083250	user398	Lomo!	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083250 user398 Lomb a href http m.twitter.com real follow mobile web a 
+Input: 20091110083250	user1310	I need Joo chiat and Shenton way!	<a href="http://code.google.com/p/pocketwit/" rel="nofollow">PockeTwit</a>
+Output: 20091110083250 user1310 I need Joo chat and Shelton way a href http code.google.com p pocketwit real follow PockeTwit a 
+Input: 20091110083251	user872	@user1538 yeah i want them to stop coming 2 my phone at night & from 9-5	<a href="http://pocket.drikin.com/" rel="nofollow">pocket*</a>
+Output: 20091110083251 user872 user1538 yeah i want them to stop coming 2 my phone at night from 9-5 a href http pocket.drikin.com real follow pocket a 
+Input: 20091110083251	user1540	Diplomacy = saying "Nice doggie" until you find a rock.	web
+Output: 20091110083251 user1540 Diplomacy saying Nice doggie until you find a rock web 
+Input: 20091110083251	user1541	@user1542 ew. i looked like shit during my bday. My curls as in, my normal one. The one during my bday isn't original. Sarah's straightened-	web
+Output: 20091110083251 user1541 user1542 ew i looked like shot during my day My curls as in my normal one The one during my day isn't original Sarah straightened web 
+Input: 20091110083252	user1544	Funeral For A Friend Tales Don&#39;t Tell Themselves CD http://tinyurl.com/yjqf3jy	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083252 user1544 Funeral For A Friend Tales Don 39 t Tell themselves CD http tinyurl.com yjqf3jy a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083252	user1545	@user1546 happy rapat-ing :) tiba2 mau abp huaaaaaaaa	<a href="http://ubertwitter.com" rel="nofollow">UberTwitter</a>
+Output: 20091110083252 user1545 user1546 happy rapt ing tribal man ab huaaaaaaaa a href http ubertwitter.com real follow UberTwitter a 
+Input: 20091110083252	user1547	Great Price On A Full Leather Notebook Carrying Case: List Price: $199.95Deal Price: $39.95You Save: $30.00 (80.. http://bit.ly/4114Fv	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083252 user1547 Great Price On A Full Leather Notebook Carrying Case List Price 199.95Deal Price 39.95You Save 30.00 80 http bit.ly 4114 a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083253	user1548	@user1549 nesāc. tik ilgi noturējusies esi! :) (par pīpēšanu)	web
+Output: 20091110083253 user1548 user1549 nesāc tik ilri noturējusies es par pm put and web 
+Input: 20091110083253	user1550	Video: Sexy Beijing- Lost in Translation Hilarious! One of my favorite shows to follow when I am feeling a... http://tumblr.com/xee3y9rpi	<a href="http://www.tumblr.com/" rel="nofollow">Tumblr</a>
+Output: 20091110083253 user1550 Video Sexy Beijing Lost in Translation hilarious One of my favorite shows to follow when I am feeling a http tumblr.com xee3y9rpi a href http www.tumblr.com real follow Tumble a 
+Input: 20091110083253	user1551	RT @user1552 Grippe A : Pékin intensifie sa campagne de #vaccinations - Le Monde : http://bit.ly/25CzvG #H1N1 #Pandemie	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083253 user1551 RT user1552 Grippe A P kin intensified sa campagne de vaccinations Le Monde http bit.ly 25CzvG 11 pandemic a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083253	user1553	@user1554 where u goin?	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083253 user1553 user1554 where u going a href http m.twitter.com real follow mobile web a 
+Input: 20091110083253	user1555	@user1556	<a href="http://echofon.com/" rel="nofollow">Echofon</a>
+Output: 20091110083253 user1555 user1556 a href http echofon.com real follow Ecofin a 
+Input: 20091110083253	user1557	New post, "The secret for a college student to become independent money maker in wealthy affiliate" - http://bit.ly/1JhhkN	<a href="http://ping.fm/" rel="nofollow">Ping.fm</a>
+Output: 20091110083253 user1557 New post The secret for a college student to become independent money maker in wealthy affiliate http bit.ly 1JhhkN a href http ping.fm real follow Ping.fm a 
+Input: 20091110083253	user1558	bis jetzt waren der dienstag und ich noch beste freunde...	web
+Output: 20091110083253 user1558 is jet warn der dienstag und ich noch best frente web 
+Input: 20091110083253	user1559	DIY Deal: Autel MaxiScan CAN OBD-II Code Reader: List Price: $39.99Deal Price: $39.99The MaxiScan MS300 CAN OBD.. http://bit.ly/3cRSjs	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083253 user1559 DIY Deal Auel Mexican CAN OB II Code Reader List Price 39.99Deal Price 39.99The Mexican 300 CAN OB http bit.ly 3cRSjs a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083253	user1560	@user1561 Ohhh :(. They wanted to keep it a secret, Dale&Sam.	web
+Output: 20091110083253 user1560 user1561 Ohhh They wanted to keep it a secret Dale&Sam web 
+Input: 20091110083254	user1133	@user1562 I got lit, f.tech and studioarts :) na, im pretty sure theres still vce lit. and on the electives sheet it says im in 10i. hmm.	web
+Output: 20091110083254 user1133 user1562 I got lit f.tech and studioarts na im pretty sure theres still vice lit and on the electives sheet it says im in 10 hmm web 
+Input: 20091110083254	user1547	Fosmon?? 10 Ft HDMI to HDMI Cables: List Price: $29.95Deal Price: $5.99You Save: $23.96 (80%)Fully shielded mul.. http://bit.ly/22nN8m	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083254 user1547 common 10 Ft DI to DI Cables List Price 29.95Deal Price 5.99You Save 23.96 80 Fully shielded muh http bit.ly 22nN8m a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083254	user1557	New post, "Make An Extra Income" - http://bit.ly/TqZNj	<a href="http://ping.fm/" rel="nofollow">Ping.fm</a>
+Output: 20091110083254 user1557 New post Make An Extra Income http bit.ly TqZNj a href http ping.fm real follow Ping.fm a 
+Input: 20091110083254	user1563	@user1564 you are confused lol	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083254 user1563 user1564 you are confused lot a href http m.twitter.com real follow mobile web a 
+Input: 20091110083254	user1565	@user1566 a lot more small stuff - Protons, neutrons, electrons, quarks ..... (just wiki'd it and now my head hurts ;-)	<a href="http://twitter.peoplebrowsr.com/dev" rel="nofollow">PeopleBrowsr</a>
+Output: 20091110083254 user1565 user1566 a lot more small stuff Protons neutrons electrons quarks just wiki'd it and now my head hurts a href http twitter.peoplebrowsr.com def real follow PeopleBrowsr a 
+Input: 20091110083254	user1567	@user1568 I will "Mother" LMFAO!!!	web
+Output: 20091110083254 user1567 user1568 I will Mother FAO web 
+Input: 20091110083254	user1569	RT @user1570: and love can accomplish much, and what is done in love is done well.”—Vincent Van Gogh	<a href="http://viigo.com" rel="nofollow">Viigo</a>
+Output: 20091110083254 user1569 RT user1570 and love can accomplish much and what is done in love is done well to Vincent Van Gogh a href http viigo.com real follow Vigo a 
+Input: 20091110083254	user1571	entahlah...	web
+Output: 20091110083254 user1571 entahlah web 
+Input: 20091110083255	user1572	Asian nations bear brunt of dollar slump: TOKYO: Asia’s small, open economies are caught in the crossfire of a .. http://bit.ly/3aHbfC	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083255 user1572 Asian nations bear brunt of dollar slump TOKYO Asia was small open economies are caught in the crossfire of a http bit.ly 3aHbfC a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083255	user1573	In variatie op @user1574: ik haat heel de Mexicaanse griep.	<a href="http://www.atebits.com/" rel="nofollow">Tweetie</a>
+Output: 20091110083255 user1573 In varieties op user1574 in halt heel de Mexicans grip a href http www.atebits.com real follow Tweetie a 
+Input: 20091110083255	user1575	@user1576 Why it gotta be that? cause i'm spanish! that's not my last name	web
+Output: 20091110083255 user1575 user1576 Why it gotta be that cause im spanish that not my last name web 
+Input: 20091110083255	user1578	@user1579 hi how are you?	web
+Output: 20091110083255 user1578 user1579 hi how are you web 
+Input: 20091110083255	user1580	makan harus pake kecap&sambeltrasi baru manyos ckaka	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083255 user1580 makan harms take kecap&sambeltrasi bar mangos cake a href http m.twitter.com real follow mobile web a 
+Input: 20091110083255	user1581	Reading RecipesTap: A Baseball Kind of Day http://bit.ly/3Xr3Rf #recipes	<a href="http://apiwiki.twitter.com/" rel="nofollow">API</a>
+Output: 20091110083255 user1581 Reading RecipesTap A Baseball Kind of Day http bit.ly 3Xr3Rf recipes a href http apiwiki.twitter.com real follow API a 
+Input: 20091110083255	user1582	@user1583 it definitely has been a while! how are you?!	web
+Output: 20091110083255 user1582 user1583 it definitely has been a while how are you web 
+Input: 20091110083255	user1584	Mayors want govt to up ante on leaky homes: Mayors of the six cities worst hit by leaky home problems are see.. http://bit.ly/3bRAiH	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083255 user1584 Mayors want govt to up ante on leaky homes Mayors of the six cities worst hit by leaky home problems are see http bit.ly 3bRAiH a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083256	user1585	I just love the hotel/motel set designs in #Supernatural!!!	web
+Output: 20091110083256 user1585 I just love the hotel motel set designs in Supernatural web 
+Input: 20091110083256	user1586	still heree :D making my own web site :) hahah i suck	web
+Output: 20091110083256 user1586 still here D making my own web site hahch i suck web 
+Input: 20091110083256	user1587	Post Edited: The Verdit of Louis Vuitton Mahina (http://cli.gs/DJVLy) http://cli.gs/DJVLy	<a href="http://www.joedolson.com/articles/wp-to-twitter/" rel="nofollow">WP to Twitter</a>
+Output: 20091110083256 user1587 Post Edited The Verdi of Louis Vuitton Marina http cli.gs DJVLy http cli.gs DJVLy a href http www.joedolson.com articles wp to twitter real follow We to twitter a 
+Input: 20091110083256	user1588	@user1589 http://bit.ly/3U33y7	<a href="http://www.seesmic.com/" rel="nofollow">Seesmic</a>
+Output: 20091110083256 user1588 user1589 http bit.ly 3U33y7 a href http www.seesmic.com real follow Seismic a 
+Input: 20091110083256	user1590	@user1591, well they were good analogies. and the baked beans were really funny.	<a href="http://www.seesmic.com/" rel="nofollow">Seesmic</a>
+Output: 20091110083256 user1590 user1591 well they were good analogies and the baked beans were really funny a href http www.seesmic.com real follow Seismic a 
+Input: 20091110083257	user1594	This venue is dope, I think I saw Benny Blanco try to give Carlito some champagne...couldn't see what happened next	web
+Output: 20091110083257 user1594 This venue is dope I think I saw Benny Blanco try to give Carlito some champagne couldn't see what happened next web 
+Input: 20091110083257	user1595	Yayaay so excited for @user1596 and @user1597 to be in NZ next year!	<a href="http://destroytwitter.com/" rel="nofollow">DestroyTwitter</a>
+Output: 20091110083257 user1595 payday so excited for user1596 and user1597 to be in NZ next year a href http destroytwitter.com real follow DestroyTwitter a 
+Input: 20091110083257	user1572	China to give Africa US$10b in loans: PM: SHARM EL-SHEIKH, Egypt: Chinese Prime Minister Wen Jiabao on Sunday p.. http://bit.ly/QMEp8	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083257 user1572 China to give Africa US 10b in loans PM SHARM EL SHEIKH Egypt Chinese Prime Minister Wen Jiabao on Sunday p http bit.ly QMEp8 a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083258	user1601	yummy milo	web
+Output: 20091110083258 user1601 yummy mile web 
+Input: 20091110083258	user1602	@user1603 E' prevista anche la lezione di disegno di nudo femminile?	web
+Output: 20091110083258 user1602 user1603 E pregiata anche la legions di disegno di nude feminine web 
+Input: 20091110083258	user1604	@user1605 reunion! Practicing for kickball on Thursday. It's on team!	web
+Output: 20091110083258 user1604 user1605 reunion Practicing for kickback on Thursday It on team web 
+Input: 20091110083258	user1606	@user1607 wut site?	web
+Output: 20091110083258 user1606 user1607 but site web 
+Input: 20091110083258	user1608	Ok. Good night tweeps! *tinkle*	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083258 user1608 Ok Good night sweeps tinkle a href http m.twitter.com real follow mobile web a 
+Input: 20091110083258	user1609	Voor iedereen die wel wil maar nog niet hard genoeg, nog een keer de kookwekkertip. Twitter dicht, timer op 15 min...	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083258 user1609 poor iedereen die wel wil mahr not net hard gene not been keep de kookwekkertip twitter dich timer op 15 min a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083258	user1610	oh where has my brain gone? i think i need a thinking cap.	<a href="http://www.tweetdeck.com/" rel="nofollow">TweetDeck</a>
+Output: 20091110083258 user1610 oh where has my brain gone i think i need a thinking cap a href http www.tweetdeck.com real follow TweetDeck a 
+Input: 20091110083259	user1572	JAL executives to forgo pay in December: TOKYO: Japan Airlines (JAL) said yesterday its executives would receiv.. http://bit.ly/4DtRn5	<a href="http://twitterfeed.com" rel="nofollow">twitterfeed</a>
+Output: 20091110083259 user1572 JAL executives to forgo pay in December TOKYO Japan Airlines JAL said yesterday its executives would receive http bit.ly 4DtRn5 a href http twitterfeed.com real follow twitterfeed a 
+Input: 20091110083259	user1614	@user1615 I like your adams apple	<a href="http://m.twitter.com/" rel="nofollow">mobile web</a>
+Output: 20091110083259 user1614 user1615 I like your dams apple a href http m.twitter.com real follow mobile web a 
+Input: 20091110083300	user1617	Dammit, 4 am just popped outta nowhere. Dammit dammit dammit.	<a href="http://echofon.com/" rel="nofollow">Echofon</a>
+Output: 20091110083300 user1617 summit 4 am just popped outta nowhere summit summit summit a href http echofon.com real follow Ecofin a 

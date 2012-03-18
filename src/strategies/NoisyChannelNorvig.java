@@ -13,7 +13,7 @@ public class NoisyChannelNorvig implements CorrectionStrategy {
 	@Override
 	public String findCorrection(String inputWord,
 			HashMap<String, Integer> dictionaryWords) {
-		if(dictionaryWords.containsKey(inputWord) || isUrl(inputWord) || isAtUsername(inputWord) || isHashtag(inputWord)) return inputWord;
+		if(dictionaryWords.containsKey(inputWord) || isUrl(inputWord) || isAtUsername(inputWord) || isHashtag(inputWord) || isPunctuation(inputWord)) return inputWord;
 		ArrayList<String> list = edits(inputWord);
 		HashMap<Integer, String> candidates = new HashMap<Integer, String>();
 		for(String s : list) if(dictionaryWords.containsKey(s)) candidates.put(dictionaryWords.get(s),s);
@@ -22,6 +22,13 @@ public class NoisyChannelNorvig implements CorrectionStrategy {
 		return candidates.size() > 0 ? candidates.get(Collections.max(candidates.keySet())) : inputWord;
 	}
 	
+	private boolean isPunctuation(String inputWord) {
+		Pattern pattern = Pattern.compile("\\p{Punct}");
+		Matcher matcher = pattern.matcher(inputWord);
+		
+		return matcher.matches();
+	}
+
 	public ArrayList<String> edits(String word)
 	{
 		ArrayList<String> edits = new ArrayList<String>();

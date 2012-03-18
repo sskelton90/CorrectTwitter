@@ -32,7 +32,7 @@ def load_ngrams(filepath):
 
 
 d = Dictionary()
-strategies = {"mostcommon": most_common, "noisynorvig": noisy_channel_norvig, "noisyngrams": noisy_channel_with_ngrams}
+strategies = {"mostcommon": most_common, "noisynorvig": noisy_channel_norvig, "noisyngrams": noisy_channel_with_ngrams, "charngrams": char_level_ngrams, "voting": voting}
 n_grams = {}
 
 if len(sys.argv) == 1:
@@ -88,7 +88,7 @@ elif sys.argv[1] == "tweets":
     print "Correction strategy not recognised. Available strategies are: ", strategies
     finish()
   
-  if sys.argv[3] == "noisyngrams":
+  if sys.argv[3] == "noisyngrams" or sys.argv[3] == "voting":
     n_grams = load_ngrams(sys.argv[5])
 
   strategy = strategies[sys.argv[3]]
@@ -123,7 +123,7 @@ elif sys.argv[1] == "tweets":
         corrected_tweet += word + " "
       else:
         word_stripped = strip_punctuation(word)
-        if (sys.argv[3] == "noisyngrams"):
+        if (sys.argv[3] == "noisyngrams") or (sys.argv[3] == "voting"):
           corrected_tweet += strategy(word_stripped.lower(), context, d.dictionary_words, n_grams) + " "
         else:
           corrected_tweet += strategy(word_stripped.lower(), d.dictionary_words) + " "

@@ -2,9 +2,13 @@ package wordtools;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 
 public class WordUtils {
 	
@@ -21,15 +25,15 @@ public class WordUtils {
 				{
 					continue;
 				}
-				String[] wordsFromLine = line.split(" ");
-				for (String word : wordsFromLine)
+//				String normalisedString = line.replaceAll("[\\p{Punct}&&[^\']]", " ").toLowerCase();
+//				System.out.println(normalisedString);
+//				String[] wordsFromLine = normalisedString.split(" ");
+				
+				TokenStream ts = new MyAnalyzer().tokenStream("default", new StringReader(line));
+				TermAttribute termAtt = ts.getAttribute(TermAttribute.class); 
+				while (ts.incrementToken())
 				{
-					String normalisedString = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
-					if (normalisedString.isEmpty())
-					{
-						continue;
-					}
-					words.add(normalisedString);
+		            words.add(termAtt.term()); 
 				}
 			}
 			
@@ -122,11 +126,12 @@ public class WordUtils {
 				{
 					continue;
 				}
-				String[] wordsFromLine = line.split(" ");
+				String normalisedString = line.replaceAll("[\\p{Punct}&&[^\']]", " ").toLowerCase();
+				System.out.println(normalisedString);
+				String[] wordsFromLine = normalisedString.split(" ");
 				for (String word : wordsFromLine)
 				{
-					String normalisedString = word.replaceAll("[^a-zA-Z]", "").toLowerCase();
-					if (normalisedString.isEmpty())
+					if (normalisedString.isEmpty() || word.contains("<"))
 					{
 						continue;
 					}

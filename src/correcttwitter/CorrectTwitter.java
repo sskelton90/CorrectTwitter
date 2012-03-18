@@ -1,15 +1,22 @@
 package correcttwitter;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.LineNumberReader;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import org.apache.lucene.analysis.TokenStream;
+import org.apache.lucene.analysis.tokenattributes.TermAttribute;
 
 import strategies.MostCommonWord;
 import strategies.NoisyChannelNorvig;
 import strategies.NoisyChannelWithLevenshteinModel;
-
 import wordtools.Dictionary;
+import wordtools.MyAnalyzer;
 import wordtools.WordUtils;
 
 public class CorrectTwitter {
@@ -117,29 +124,47 @@ public class CorrectTwitter {
 			
 			dict.loadDictionary(args[2]);
 			BufferedReader reader;
+			FileWriter fstream;
+			BufferedWriter out;
+			
+			
+			
 			try {
 				reader = new BufferedReader(new FileReader(args[3]));
+				BufferedReader countReader = new BufferedReader(new FileReader(args[3]));
+				fstream = new FileWriter(args[4]);
+				out = new BufferedWriter(fstream);
 				String line;
+				int count = 0;
+				
+				LineNumberReader lnr = new LineNumberReader(countReader);
+				lnr.skip(Long.MAX_VALUE);
+				System.out.printf("Starting Correction with size of %d Tweets.\n", lnr.getLineNumber());
 				while ((line = reader.readLine()) != null)
 				{
+					count++;
 					if (line.isEmpty())
 					{
 						continue;
 					}
 					
 					StringBuilder sb = new StringBuilder();
-					String[] words = line.split(" ");
 					
-					for (String word : words)
+					TokenStream ts = new MyAnalyzer().tokenStream("default", new StringReader(line));
+					TermAttribute termAtt = ts.getAttribute(TermAttribute.class); 
+					while (ts.incrementToken())
 					{
-						sb.append(dict.correctWord(word.toLowerCase()));
+			            sb.append(dict.correctWord(termAtt.term()));
 						sb.append(" ");
 					}
 					sb.append("\n");
 					
-					System.out.println("Original: " + line);
-					System.out.println("Corrected: " + sb.toString());
+					out.write("Input: " + line + "\n");
+					out.write("Output: " + sb.toString());
+					
+					System.out.printf("Processed %d of %d.\r", count, lnr.getLineNumber());
 				}
+				out.close();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
