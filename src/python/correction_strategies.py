@@ -2,7 +2,11 @@ from word_tools import *
 import string
 import math
 
+# A method implemented at the beginning that became obsolete
+# kept here for history's sake
 def most_common(input_word, dictionary):
+  # Works by looking through every word in the dictionary and finding
+  # the closest with most occurrences
   candidates = []
   max_value = 0
   max_word = ""
@@ -11,6 +15,8 @@ def most_common(input_word, dictionary):
     if edit_distance(input_word, real_word) <= 1:
       candidates.append(real_word)
 
+  print candidates
+
   for candidate in candidates:
     prior = dictionary[candidate]
 
@@ -18,8 +24,13 @@ def most_common(input_word, dictionary):
       max_value = prior
       max_word = candidate
 
+  if max_word == "":
+    return input_word
+
   return max_word
 
+# Norvig's Noisy Channel Method taken from
+# http://norvig.com/spell-correct.html
 def noisy_channel_norvig(word, dictionary):
   candidates = known([word], dictionary) or known(edits1(word), dictionary) or edits2(word, dictionary) or [word]
   return max(candidates, key=dictionary.get)
@@ -39,6 +50,7 @@ def edits2(word, d):
 def known(words, d):
   return set(w for w in words if w in d)
 
+# Context sensitive correction
 def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
   candidates = known([word], dictionary) or known(edits1(word), dictionary) or edits2(word, dictionary) or [word]
 
@@ -50,6 +62,7 @@ def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
   max_word = ""
   for c in candidates:
     ngram_prob = 0.0
+    # Lookup nested dictionary of contexts and find the greatest probability
     try:
       if context[0] == "":
         ngram_prob = ngrams[c][context[1]]
@@ -70,11 +83,14 @@ def noisy_channel_with_ngrams(word, context, dictionary, ngrams):
 
   return max_word
 
+# Find the closest words to the error based on character-level n-gram similarity
 def char_level_ngrams(word, dictionary):
   max_value = 0.0
   max_word = ""
 
   for real_word in dictionary:
+    if (abs(len(real_word) - len(word)) > 1):
+      continue
     score = ngram_similarity_order(word, real_word, 2)
     if score > max_value:
       max_word = real_word
@@ -82,10 +98,12 @@ def char_level_ngrams(word, dictionary):
 
   return max_word
 
-def voting(word, dictionary, context, ngrams):
+# Combine the three correction algorithms into a voting algorithm
+def voting(word, context, dictionary, ngrams):
   candidates = []
   candidates.append(noisy_channel_norvig(word, dictionary))
   candidates.append(char_level_ngrams(word, dictionary))
   candidates.append(noisy_channel_with_ngrams(word, context, dictionary, ngrams))
 
+  # Return the word that has reached consensus
   return max(set(candidates), key=candidates.count)

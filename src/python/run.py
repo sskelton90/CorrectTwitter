@@ -1,15 +1,26 @@
 import sys
+import time
 from word_tools import *
 from dictionary import *
 from correction_strategies import *
 from collections import defaultdict
+import nltk.corpus
+import os
 
+start = time.time()
+
+# Stop the timer and print running time
 def finish():
+  print time.time() - start, "seconds"
   sys.exit("Finishing")
 
+# Method for creating a nested dictionary
 def nested_dict():
   return defaultdict(float)
 
+# Load the n-grams file
+# File is of the form:
+# Word1 Word2 Occurrences
 def load_ngrams(filepath):
   textfile = open(filepath)
   ngrams = defaultdict(nested_dict)
@@ -31,6 +42,8 @@ def load_ngrams(filepath):
   return ngrams
 
 
+# Entry point for the run script
+# Creates a dictionary
 d = Dictionary()
 strategies = {"mostcommon": most_common, "noisynorvig": noisy_channel_norvig, "noisyngrams": noisy_channel_with_ngrams, "charngrams": char_level_ngrams, "voting": voting}
 n_grams = {}
@@ -46,13 +59,38 @@ if sys.argv[1] == "train":
     print "Please enter some training texts.\nUsage: python run.py train [files]"
     finish()
   for i in range(2, len(sys.argv)):
-    d.learn_from_text(sys.argv[i])
+    # If a built-in nltk corpus use that
+    # else load the text file and learn
+    print "Processing: ", i-1, " of ", len(sys.argv) - 2
+    if sys.argv[i] == "abc":
+      d.learn_words(nltk.corpus.abc.words())
+    elif sys.argv[i] == "genesis":
+      d.learn_words(nltk.corpus.genesis.words())
+    elif sys.argv[i] == "gutenberg":
+      d.learn_words(nltk.corpus.gutenberg.words())
+    elif sys.argv[i] == "inaugural":
+      d.learn_words(nltk.corpus.inaugural.words())
+    elif sys.argv[i] == "udhr":
+      d.learn_words(nltk.corpus.udhr.words())
+    elif sys.argv[i] == "state_union":
+      d.learn_words(nltk.corpus.state_union.words())
+    elif sys.argv[i] == "nps":
+      d.learn_words(nltk.corpus.nps_chat.words())
+    else:
+      d.learn_from_text(sys.argv[i])
 
+  # Remove possible noise by thresholding dictionary
+  # to at least 40 occurrences
+  d.cull_words(40)
+
+  # Save dictionary to file
   d.save_dictionary()
 
 elif sys.argv[1] == "accuracy":
-  if len(sys.argv) != 5:
-    print "Please provide a dictionary, correction strategy, and a test file.\nUsage: python run.py correct <dictionary> <correction strategy> <test file>"
+  # Test against an error to correction mapping text file such as
+  # Sheffield test set
+  if len(sys.argv) < 5:
+    print "Please provide a dictionary, correction strategy, and a test file.\nUsage: python run.py accuracy <dictionary> <correction strategy> <test file>"
     finish()
 
   d.load_dictionary(sys.argv[2])
@@ -65,13 +103,20 @@ elif sys.argv[1] == "accuracy":
 
   error_mapping = load_corrections_from_file(sys.argv[4])
 
+  if sys.argv[3] == "noisyngrams" or sys.argv[3] == "voting":
+    n_grams = load_ngrams(sys.argv[5])
+
   correct_count = 0.0
   incorrect_count = 0.0
 
   for correct_word in error_mapping:
     error = error_mapping[correct_word]
     if error not in d.dictionary_words:
-      nearest_word = strategy(error, d.dictionary_words)
+      if (sys.argv[3] == "noisyngrams") or (sys.argv[3] == "voting"):
+        nearest_word = strategy(error.lower(), ["",""], d.dictionary_words, n_grams) 
+      else:
+        nearest_word = strategy(error.lower(), d.dictionary_words)
+      
       if nearest_word == correct_word:
         correct_count += 1.0
       else:
@@ -82,6 +127,7 @@ elif sys.argv[1] == "accuracy":
   finish()
 
 elif sys.argv[1] == "tweets":
+  # Usage: run.py tweets dictionary_file correction_strategy tweets_file (n-grams if method needs n-grams)
   d.load_dictionary(sys.argv[2])
 
   if sys.argv[3] not in strategies:
@@ -93,10 +139,17 @@ elif sys.argv[1] == "tweets":
 
   strategy = strategies[sys.argv[3]]
 
-  print "Correcting", number_of_tweets(sys.argv[4]), "tweets"
+  total = number_of_tweets(sys.argv[4])
+
+  print "Correcting", total, "tweets"
 
   tweets = open(sys.argv[4])
   output = file("output.txt", 'w')
+
+  count = 0
+
+  # A dictionary of common contractions that were found using error analysis
+  common_contractions = {"r":"are", "u":"you", "aint":"ain't", "ur":"your", "n":"and", "cud":"could", "pls":"please", "plz":"please", "2":"to", "4":"for", "ya":"your", "y":"why", "thnx":"thanks", "thx":"thanks", "tho":"though", "sumthin":"something", "sumthing":"something", "bday":"birthday", "hw":"how", "lyf":"life", "luv":"love", "lovin":"loving", "nite":"night", "goodnite":"goodnight", "2morrow":"tomorrow", "2moro":"tomorrow", "da":"the", "thru":"through", "dnt":"don't", "msg":"message", "msgs":"messages", "nxt":"next", "wk":"week", "isn":"isn't", "theres":"there's", "bac":"back", "itll":"it'll", "ppl":"people"}
 
   for tweet in tweets:
     corrected_tweet = ""
@@ -104,11 +157,13 @@ elif sys.argv[1] == "tweets":
     corrections_count = 1.0
     corrections = []
     words = tweet.split()
+    count += 1
 
     for i in range(len(words)):
       word = words[i]
       context = []
       
+      # Find the context of the error (one word either side)
       if i == 0:
         context = ["",strip_punctuation(words[1]).lower()]
       elif i == len(words) - 1:
@@ -116,12 +171,21 @@ elif sys.argv[1] == "tweets":
       else:
         context = [strip_punctuation(words[i - 1]).lower(), strip_punctuation(words[i + 1]).lower()]
 
+      # If we are correcting over 1/3 then it's probably non-English
       if corrections_count > (tweet_length/3):
         corrected_tweet = "Non-English language detected!"
         break
-      if has_tweet_specific_features(word) or strip_punctuation(word.lower()) in d.dictionary_words:
+      # If the error is a common contraction simply perform dictionary lookup and add
+      # to corrected Tweet
+      if word.lower() in common_contractions:
+        corrected_tweet += common_contractions[word.lower()] + " "
+        corrections.append(word.lower())
+      elif has_tweet_specific_features(word) or strip_punctuation(word.lower()) in d.dictionary_words:
+        # if it has Tweet specific features or the word is in the dictionary then it's
+        # not an error so add it to the corrected Tweet
         corrected_tweet += word + " "
       else:
+        # Must be an error so use the strategy selected and correct it
         word_stripped = strip_punctuation(word)
         if (sys.argv[3] == "noisyngrams") or (sys.argv[3] == "voting"):
           corrected_tweet += strategy(word_stripped.lower(), context, d.dictionary_words, n_grams) + " "
@@ -130,12 +194,8 @@ elif sys.argv[1] == "tweets":
         corrections_count += 1.0
         corrections.append(word.lower())
 
-    output.write(tweet + "\n" + corrected_tweet + "\n")
-    for correction in corrections:
-      output.write(correction + "\n")
-  
+    print "Corrected: ", count, "of", total
+
+    output.write(corrected_tweet + "\n") 
+
   print "Completed succesfully!"
-
-
-
-
